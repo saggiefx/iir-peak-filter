@@ -12,15 +12,14 @@ public:
     void setCutoff(float fHz);
     void setBandWidth(float bHz);
     void setSampleRate(float sampleRate);
-    void prepare(float sampleRate, float gain, float fc, float fb);
-    void process(juce::AudioBuffer<float>& buffer);
     void updateCoefficients();
-    float processSample(float input);
+    void processBlock(juce::AudioBuffer<float>& buffer);
+    float processSample(float input, int channel);
 
 private:
 
-    //filter coefficients
-    float G, Wc,Wb;
+    //filter coefficients & parameters
+    float G, Wc,Wb,H0,c,d;
 
     float sampleRate;
     float cutoffFrequency;

@@ -103,7 +103,7 @@ void XFilterAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 
-    peakFilter.prepare(static_cast<float>(sampleRate), gainParam->load(), cutoffParam->load(), bandwidthParam->load());
+    peakFilter.setSampleRate(static_cast<float>(sampleRate));
 }
 
 void XFilterAudioProcessor::releaseResources()
@@ -156,9 +156,8 @@ void XFilterAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     peakFilter.setGain(gainParam->load());
     peakFilter.setBandWidth(bandwidthParam->load());
     peakFilter.setCutoff(cutoffParam->load());
-    //peakFilter.updateCoefficients();
-
-    peakFilter.process(buffer);
+    peakFilter.updateCoefficients();
+    peakFilter.processBlock(buffer);
 }
 
 //==============================================================================
