@@ -12,7 +12,7 @@ public:
     void setCutoff(float fHz);
     void setBandWidth(float bHz);
     void setSampleRate(float sampleRate);
-    void prepare(double sampleRate, float gain, float fc, float fb);
+    void prepare(float sampleRate, float gain, float fc, float fb);
     void process(juce::AudioBuffer<float>& buffer);
     void updateCoefficients();
     float processSample(float input);
@@ -20,12 +20,13 @@ public:
 private:
 
     //filter coefficients
-    float c, H0, G, Wc,Wb, d;
+    float G, Wc,Wb;
 
-    // state variables
-    float xh[2] = { 0.0f, 0.0f }, yA;
+    float sampleRate;
+    float cutoffFrequency;
 
-    double sampleRate;
+    std::vector<float> xh0;
+    std::vector<float> xh1;
 
 };
 
