@@ -28,7 +28,9 @@ XFilterAudioProcessorEditor::XFilterAudioProcessorEditor (XFilterAudioProcessor&
     bandwidthSlider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
     bandwidthSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(audioProcessor.parametersTree, "bandwidth", bandwidthSlider));
 
-    setSize (400, 370);
+    radioBase = juce::ImageCache::getFromMemory(BinaryData::radio_front_png, BinaryData::radio_front_pngSize);
+
+    setSize (900, 450);
 }
 
 XFilterAudioProcessorEditor::~XFilterAudioProcessorEditor()
@@ -41,6 +43,8 @@ void XFilterAudioProcessorEditor::paint (juce::Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (juce::Colours::teal);
 
+    g.drawImage(radioBase, 0, 0, getWidth(), getHeight(), 0, 0, 1170,557 );
+
 }
 
 void XFilterAudioProcessorEditor::resized()
@@ -48,8 +52,11 @@ void XFilterAudioProcessorEditor::resized()
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
 
-    gainSlider.setBounds(10, 0, 150, 150);
-    cutoffSlider.setBounds(10, 100, 150, 150);
-    bandwidthSlider.setBounds(10, 200, 150, 150);
+    int knobSize = 120;
+    int y_init = 238;
+
+    gainSlider.setBounds(397, y_init, knobSize, knobSize);
+    bandwidthSlider.setBounds(527, y_init, knobSize, knobSize);
+    cutoffSlider.setBounds(648, 198, 200, 200);
 
 }

@@ -27,7 +27,7 @@ Suggested methods to test the build:
  * Build the project in debug mode.
  * Run and test the application.
 
- 2.VST3 Plugin
+ 2. VST3 Plugin
  * Locate the .vst3 file in the builds folder.
  * Test the VST3 plugin in your audio workstation or environment that supports VST3 plugins.
 
@@ -41,3 +41,7 @@ If you encounter any issues or have suggestions, please open an issue or create 
 3. **Low/High Shelving Filter:** Implement filters to create a comprehensive EQ plugin.
 4. **CMake Configuration (Branch):** Separate CMake configuration for a streamlined build process.
 5. **CI/CD for AU/VST3:** Implement CI/CD for delivering fully functional plugins.
+
+
+## Last Update
+![UI under developement](UI#1.png)

@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "Knob.h"
 
 //==============================================================================
 /**
@@ -29,11 +30,13 @@ private:
     // access the processor object that created it.
     XFilterAudioProcessor& audioProcessor;
 
-    juce::Slider gainSlider;
-    juce::Slider cutoffSlider;
-    juce::Slider bandwidthSlider;
+    Knob gainSlider;
+    Knob cutoffSlider;
+    Knob bandwidthSlider;
 
     juce::Component window;
+
+    juce::Image radioBase;
 
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> gainSliderAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> cutoffSliderAttachment;

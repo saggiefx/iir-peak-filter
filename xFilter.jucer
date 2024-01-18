@@ -4,7 +4,10 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               pluginManufacturer="saggiefx" pluginFormats="buildStandalone,buildVST3">
   <MAINGROUP id="LWGawI" name="xFilter">
+    <FILE id="Nw7eT9" name="radio_front.png" compile="0" resource="1" file="../radio_front.png"/>
+    <FILE id="hkIyaA" name="E1.png" compile="0" resource="1" file="../E1.png"/>
     <GROUP id="{8E6B6302-7E5E-6D6A-B15B-0B1B77706A62}" name="Source">
+      <FILE id="taFwbW" name="Knob.h" compile="0" resource="0" file="Source/Knob.h"/>
       <FILE id="yPSW4z" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="BvKgjn" name="PluginProcessor.h" compile="0" resource="0"
