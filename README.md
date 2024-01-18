@@ -44,4 +44,4 @@ If you encounter any issues or have suggestions, please open an issue or create 
 
 
 ## Last Update
-![UI under developement](UI#1.png)
+![UI under developement](/UI#1.png)
