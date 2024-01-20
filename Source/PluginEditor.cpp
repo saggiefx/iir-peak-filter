@@ -43,7 +43,7 @@ void XFilterAudioProcessorEditor::paint (juce::Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (juce::Colours::teal);
 
-    g.drawImage(radioBase, 0, 0, getWidth(), getHeight(), 0, 0, 1170,557 );
+    g.drawImage(radioBase, 0, 0, getWidth(), getHeight(), 0, 0, radioBase.getWidth(), radioBase.getHeight());
 
 }
 
@@ -53,10 +53,10 @@ void XFilterAudioProcessorEditor::resized()
     // subcomponents in your editor..
 
     int knobSize = 120;
-    int y_init = 238;
+    int y_init = 235;
 
-    gainSlider.setBounds(397, y_init, knobSize, knobSize);
-    bandwidthSlider.setBounds(527, y_init, knobSize, knobSize);
-    cutoffSlider.setBounds(648, 198, 200, 200);
+    gainSlider.setBounds(390, y_init, knobSize, knobSize);
+    bandwidthSlider.setBounds(520, y_init, knobSize, knobSize);
+    cutoffSlider.setBounds(640, 195, 200, 200);
 
 }
