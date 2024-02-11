@@ -1,5 +1,1 @@
-# JUCE library code
-JuceLibraryCode/
-
-# JUCE build artifacts
-Builds/
+/build

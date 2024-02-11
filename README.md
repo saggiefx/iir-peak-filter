@@ -14,6 +14,9 @@ This project introduces a simple cutoff filter plugin designed with learning in 
 
 The primary goal of this project is to provide a practical reference for students to comprehend the essentials of audio signal processing and plugin development. The emphasis is on simplicity and clarity to enhance the learning experience.
 
+## Lastest Update
+![under developement](/UI.png)
+
 ## Build Instructions
 
 ### Building the Project
@@ -42,6 +45,3 @@ If you encounter any issues or have suggestions, please open an issue or create 
 4. **CMake Configuration (Branch):** Separate CMake configuration for a streamlined build process.
 5. **CI/CD for AU/VST3:** Implement CI/CD for delivering fully functional plugins.
 
-
-## Last Update
-![UI under developement](/UI1.png)
