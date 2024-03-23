@@ -24,6 +24,14 @@ XFilterAudioProcessorEditor::XFilterAudioProcessorEditor (XFilterAudioProcessor&
     cutoffSlider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
     cutoffSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(audioProcessor.parametersTree, "cutoff", cutoffSlider));
 
+    addAndMakeVisible(freqNeedle);
+
+    cutoffSlider.onValueChange = [this] {
+
+        freqNeedle.setPosition(cutoffSlider.getValue());
+
+    };
+
     addAndMakeVisible(bandwidthSlider);
     bandwidthSlider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
     bandwidthSliderAttachment.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(audioProcessor.parametersTree, "bandwidth", bandwidthSlider));
@@ -59,5 +67,7 @@ void XFilterAudioProcessorEditor::resized()
     gainSlider.setBounds(372, y_init, knobSize, knobSize);
     bandwidthSlider.setBounds(498, y_init, knobSize, knobSize);
     cutoffSlider.setBounds(596, 156, 233, 233);
+
+    freqNeedle.setBounds(392, 71, 395, 104);
 
 }
